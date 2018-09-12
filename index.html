@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 
 
 
   
 
 
-<html class="theme-next pisces use-motion" lang="en">
+<html class="theme-next muse use-motion" lang="en">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
 
 
 
@@ -36,60 +37,11 @@
 
 
 
+
   
   
   <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=PingFang SC:300,300italic,400,400italic,700,700italic|PingFang SC:300,300italic,400,400italic,700,700italic|PingFang SC:300,300italic,400,400italic,700,700italic|PingFang SC:300,300italic,400,400italic,700,700italic|PingFang SC:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
 
 
 
@@ -98,7 +50,22 @@
 
 <link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
 
 
   <meta name="keywords" content="Hexo, NexT" />
@@ -108,11 +75,6 @@
 
 
   <link rel="alternate" href="/atom.xml" title="我的个人站点" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
 
 
 
@@ -132,13 +94,15 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Pisces',
-    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
-    motion: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'wjun'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -168,12 +132,6 @@
 
 
 
-
-
-
-
-
-
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -183,9 +141,8 @@
     
   
 
-  <div class="container sidebar-position-right 
-   page-home 
- ">
+  <div class="container sidebar-position-left 
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -231,26 +188,6 @@
         </li>
       
         
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            Categories
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
@@ -260,55 +197,11 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
 
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            Search
-          </a>
-        </li>
       
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
   
 </nav>
 
@@ -332,7 +225,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/19/推荐系统简要介绍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -425,6 +322,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -433,31 +333,29 @@
       
         
           
-          1、为什么要有推荐系统1）随着网速、网络载体的发展，获取信息变得越来越容易，信息很容易过载，接触的信息量很大（M、G、T、P、E）2）面对海量的商品（比如衣服、音乐、电影，我们也不知道自己到底喜欢什么）3）商家无法有针对性（指有购买可能性的客户）的推销自己的商品，做了很多无用功
-2、推荐系统的目的1
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/12/19/推荐系统简要介绍/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p><strong>1、为什么要有推荐系统</strong><br>1）随着网速、网络载体的发展，获取信息变得越来越容易，信息很容易过载，接触的信息量很大（M、G、T、P、E）<br>2）面对海量的商品（比如衣服、音乐、电影，我们也不知道自己到底喜欢什么）<br>3）商家无法有针对性（指有购买可能性的客户）的推销自己的商品，做了很多无用功</p>
+<p><strong>2、推荐系统的目的</strong><br>1）从海量的数据中提取有用的信息，用户可以快速找到自己喜欢的物品<br>2）让自己的产品脱颖而出（介绍给适合它的用户）<br>3）最终目的：“诱导”用户消费</p>
+<p><strong>3、推荐系统的适用场景</strong><br>1）电子商务：京东、亚马逊<br>2）电影和视频：主演、类型的推荐<br>3）个性化音乐：网易云音乐<br>4）社交网络：人人网推荐的可能认识的人<br>5）阅读：图书或者电子书<br>6）基于位置的推荐：比如我在中关村，推荐附近的餐厅<br>7）个性化邮件：邮件有了优先级、提升工作效率<br>8）个性化广告：增加广告的点击率</p>
+<p><strong>4、怎么判断一个好的推荐系统</strong><br>1）用户满意度<em>：通过调查获得（代价很高）<br>2）预测准确度：离线计算（分类器）、在线AB对比实验<br>3）覆盖率</em>：推荐的物品占所有物品的比例<br>4）多样性<em>：80%的动作片和20%的动画片，和用户的爱好一致<br>5）新颖性：用户感兴趣，但是还没有看过的物品<br>6）惊喜度</em>：和用户的历史兴趣不相似，但却让用户觉得满意<br>7）信任度：以用户信任的方式推给用户，用户才会购买<br>8）实时性：推荐最新的物品（比如新闻资讯类的推荐）<br>9）健壮性：比如淘宝的刷单、刷评论，在计算物品分值排序的时候，需要能过滤掉这种作弊的行为<br>10）商业目标*：可以为公司带来多少的营收或者广告的点击率</p>
+<p><strong>5、推荐系统的架构设计（同时也是简单的AB测试结构）</strong><br><img src="/images/recommend.jpg" alt="recommend"></p>
+<p><strong>6、推荐系统涉及的方法</strong><br><strong>1）基于人口统计学的推荐：年龄、性别、地区</strong><br><strong>2）协同过滤推荐：基于用户/物品的协同过滤</strong><br><strong>3）基于内容的推荐：根据用户之前喜欢过的物品，推荐类似的物品（聚类可以理解为降维）</strong><br><strong>4）混合推荐</strong><br>    加权融合：将多种推荐技术的计算结果加权混合产生推荐，比如将协同过滤的推荐结果和基于内容的推荐结果赋予相同的权重值，由用户判断这种推荐方法的好坏，来不断的调整权重值<br>    变换：根据问题背景和实际情况或要求决定变换采用不同的推荐技术。<br>    混合：同时采用多种推荐技术给出多种推荐结果为用户提供参考。<br>    特征组合：组合来自不同推荐数据源的特征被另一种推荐算法所采用。<br>    层叠：先用一种推荐技术产生一种粗糙的推荐结果，第二种推荐技术在此推荐结果的基础上进一步作出更精确的推荐。<br>    特征扩充：一种技术产生附加的特征信息嵌入到另一种推荐技术的特征输入中。<br>    元级别：用一种推荐方法产生的模型作为另一种推荐方法的输入。<br><strong>5）流行度推荐：topN这是一种推荐流行项的方法(例如最多下载、最多看过、最大影响的项)</strong><br><strong>6）基于隐变量的推荐：比如用户对这篇文章的评分、评论，评分越高代表越喜欢</strong></p>
+<p><strong>7、推荐系统会涉及的问题</strong><br><strong>1）冷启动</strong><br>利用用户注册时提供的年龄、性别等数据做粗粒度的个性化。<br>    利用用户的社交网络账号登录（需要用户授权），导入用户在社交网站上的好友信息，然后给用户推荐其好友喜欢的物品。<br>    要求用户在登录时对一些物品进行反馈，收集用户对这些物品的兴趣信息，然后给用户推荐那些和这些物品相似的物品。<br><strong>2）高估系统对用户需求的捕捉能力</strong><br>用户的需求是多变的，其中暗含着某些规律，但却不可能被完全的，彻底的捕捉到，例如用户浏览一个商品页面，可能他对网页上的产品感兴趣，可能他被网页上的代言美女吸引，可能他在为家人准备年货，也可能只是误操作罢了，这些细节被系统感知到的难度太大，所以我们无法知道用户下一步要去做什么，哪又如何推荐，这就要求技术人员有产品思维<br><strong>3）不顾场景，强暴用户需求</strong><br>对商品的推荐还是要放在商品售卖网站，对电影的推荐也请放在电影票售卖网站。浏览这些网站的用户，都带着强烈的隐含需求，但选错了地方，往往形成对用户的“强暴”，用户体验就不是很好，达不到推荐的效果<br><strong>4）其它</strong><br>数据：不同的数据适应不同的算法。例如只有用户的行为数据（例如购买、查看等交互数据），则只能选用简单的算法（例如协同过滤，基于物质扩散的算法等），如果包含用户或物品信息，可以选用较为复杂的算法。一般来说，使用的信息越多，得到的结果越精准。<br>产品类型：每个推荐系统所针对的产品不同（例如买商品的和推荐电影的），所选用的算法也应该是不尽相同的，尽量利用所在产品系统自身的特点，基于位置和不同人群的推荐。<br>性能：是否需要实时推荐。非实时推荐对性能的要求比较低，则可以选用较复杂的算法。实时推荐则对性能要求比较高，一般选择复杂度较低的算法。<br>多样性：精度和多样性的问题。在精度达到要求的情况下可以考虑推荐的多样性</p>
+<p><strong>8、从哪些方面提高推荐系统的精度和点击率</strong><br><strong>1）对症下药</strong><br>为了提升推荐系统的效果，首先需要“对症下药”，也就是推荐出来的物品集合可以追溯来源，找到问题。在设计推荐系统的时候，对推荐结果进行“埋点”，带上推荐策略的标识。然后在推荐效果的时候，对各个推荐策略分别统计结果，对比数据可以看出各个算法的优劣。最后，根据推荐统计结果，优化对应的推荐策略，进行分流测试，验证优化方法的有效性<br><strong>2）标签拓展</strong><br>物品信息中很重要的一个特征是标签。好的推荐系统不仅体现在精准性，还有多样性和惊喜度方面的要求。对物品信息进行深层度的挖掘分析，进而对标签进行拓展，也是一种实现上述要求行之有效的方法<br><strong>3）点击反馈</strong><br>和搜索引擎一样，在推荐系统中也存在一个问题：位置。推荐结果在最终展现给用户的时候，不可避免的会有先后之分，好的位置有好的曝光机会。但是最好的位置不代表有最好的推荐效果，比如推荐点击率。即使有更高的推荐点击率也不代表就一定是好的推荐结果。所以要进行点击反馈调权。<br>首先需要基于历史数据，分析每个位置的推荐效果数据，这个时候就可以看出各个位置的推荐系统的差异。然后在推荐的时候，基于推荐物品数据和每个位置的推荐效果数据，对最终的推荐结果顺序进行调整。</p>
+<p><strong>9、资料补充</strong><br>    推荐系统实践<br>    机器学习</p>
+
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -471,6 +369,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -483,7 +385,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/11/服务器开发相关总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -576,6 +482,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -584,32 +493,35 @@
       
         
           
-          序：从写下第一行“Hello World”的tc代码开始，已过去了十年有余，乱七八糟看了许多开发相关的资料，算是做了一点服务器开发相关的工作，想把这些做下总结，算是一个积累。
-题记：很喜欢李小龙的一句名言：自信来自于实力，我不敢说这句话，所以我要让自己强大起来。
-1、 最重要的是细心也许很多人会说是
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/07/11/服务器开发相关总结/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>序：从写下第一行“Hello World”的tc代码开始，已过去了十年有余，乱七八糟看了许多开发相关的资料，算是做了一点服务器开发相关的工作，想把这些做下总结，算是一个积累。</p>
+<p>题记：很喜欢李小龙的一句名言：自信来自于实力，我不敢说这句话，所以我要让自己强大起来。</p>
+<p><strong>1、 最重要的是细心</strong><br>也许很多人会说是技术最重要，但我觉得并不是，服务器开发不同于网页或者客户端开发，服务器存储着系统的数据，负责系统的大部分业务处理，所以在部署服务、脚本、和执行一些命令的时候，特别要小心了，有些命令是禁用的，像rm -rf、reboot、shutdown、yum remove等类似的，比如一时误操作，执行了强制删除，但是又不能做数据恢复，那将是毁灭性的事故，这个损失是你承担不起的；yum remove在卸载掉某个软件的时候，会卸载掉对应的所有依赖库，我曾经执行了一次yum remove openssl，但是没想到openssl依赖了几百个系统程序，结果执行之后，像cp、rz这些工具都不能用了，假如真出了这么大的事，也不要着急重启机器啥的，先查查资料，看能不能先做下数据备份，因为一旦重启，机器可能就起不来了，上次我们的服务器做了加密，结果重启之后，不能进入单用户模式、不能读取光驱、硬盘也不能挂载在其它机器上。</p>
+<p><strong>2、 耐心</strong><br>服务器开发，琐碎的事情很多，也许只是改一个命令，把文件换一个文件夹之类的，业务开发，需求改变频繁，千万不要因此而烦躁，然后出了失误，那就得不偿失了。</p>
+<p><strong>3、 要能很好的与人相处</strong><br>服务器开发，不是一个人在战斗，大部分是团队作战，做好和其它人的沟通，处理好自己和其它人的关系，能很大程度的提高工作效率。</p>
+<p><strong>4、 获取知识的能力</strong><br>技术日新月异，更新很快；决定我们以后发展快慢的，是如何获取新知识，从哪获取？<br>1） 网页：尽量选择页面简洁、废话少的网站，这种网站显得会比较专业，有时查资料查到某个人的博客，但是博客里各种感叹，那就可以直接关掉了。<br>2） 看书：<br>基础知识类的书，一般看三遍，第一遍：看目录和序，这本书主要讲什么，看完能得到什么；第二遍：一行一行的看，如果一整天的时间都在看书的话，每天看书速度不能低于70页；第三遍，一页一页快速的过，这时只看粗体字或者小标题，这一遍算是回顾，根据小标题去大致的回忆下这个小节里讲了什么，不用太细。<br>手册类的书，看自己需要的就可以，下次需要了，知道去哪找<br>3） 搜索：<br>搜索就像问问题，拆分出问题点再问，要提炼出想要查找问题的关键词，搜索的原理，就是先对你的问题做分词，拆分出一个个单个的词语，根据关键词，像蜘蛛一样去各种网页找链接，然后根据网页的相关度，用关键词进行排序，如果输入的一句话，意思表达不简洁，很可能就搜索不出结果，或者结果排在很多页之后，这样很影响效率。比如我要查找Linux下内存泄露的跟踪方法，输入：Linux 内存泄露 解决这三个单词，就很容易查找到结果，现在的搜索网页，Google如果不能用了，百度查不到结果，就用Yahoo,用英文搜索，结果有时会好一点。</p>
+<p>—————————————华丽丽的分割线—————————————<br>个人觉得，以上属于软价值，下面的属于硬价值，在程序开发的这条路上，决定一个人是否成功，80%靠软价值，20%靠硬价值，当然了硬价值是最重要的，软价值起到很好的辅助作用。<br>—————————————华丽丽的分割线—————————————</p>
+<p><strong>5、服务器开发所需要的语言知识</strong><br>无论用什么语言，语法特性是最基础的，如果是主语言，高级特性也是需要了解的。<br>C++：模板、stl实现和内存布局、gdb调试、makefile编写、内存泄露查找<br>Python：Python的运行机制，pdb调试方法，我在centos下只用过gdb查socket堵塞的问题，pdb没用过<br>Java：需要了解内存释放原理，降低gc，了解Java虚拟机运行机制<br>shell：基本的awk、sed命令，可以写简单的程序控制脚本，使用命令分析文件内容</p>
+<p><strong>6、常用的设计模式</strong><br>例如单件模式、观察者模式、消费者模式、职责链模式、工厂模式、命令模式等</p>
+<p><strong>7、需要掌握的基础知识</strong><br>操作系统原理：主要了解进程、内存的调度方式，Linux下内存的分配方式：slab；这里推荐两本书，Linux内核设计与实现：这本书大概几百页，看书时间不要超过七天；深入理解Linux内核：这本书不用全看，主要看Linux内存实现就可以。<br>tcp/IP协议：可以看那三本书，大概的知道tcp/ip的实现，知道用wireshark抓包，Linux下用tcpdump写到文件中，就可以拿到Windows下用wireshark分析，知道怎么看以太网包头、tcp/IP协议包头，业务数据包；三次握手和四次断开连接的状态图当然是最基本的，http协议，需要大概知道每个字段代表的意思，curl工具使用<br>Unix环境高级开发：这本书1K页左右，看完整本书，不能超过20天<br>Linux系统：基本的Linux命令要知道，知道每个目录下都放什么东西，关注下/proc这个文件夹，里面有系统内存、cpuinfo、进程信息（启动路径、命令、占用的fd、内存布局等）</p>
+<p>问题查找方法：<br>1） load average高：用strace跟下进程，看有哪些系统调用调用的频繁<br>2） cpu高，可以用top -p pid，再按shift + H，具体的看到是哪个线程的cpu高，然后用gab attach附加到进程上，锁定线程，按下ctrl + c，看是执行到哪步，重复执行操作一次，看都在哪些函数上执行，如果日志详细的话也可以查找；<br>3）内存占用高：看是物理内存还是虚拟内存，内存分配，不管是在堆或者栈中，都是在虚拟内存中分配，给这块内存初始化或者使用了之后，才是占用的物理内存，可以适当的分配小一点的内存，在使用之前不要初始化，用了多少，加个数字计下数。<br>4) 会用netstat看网络状态：连接状态、发送和接收队列的堆积情况</p>
+<p><strong>8、问题解决的思路</strong><br>自上而下、由大到小的查找，而不要陷进某一个函数中，将业务流程化，在关键点调试或者加日志</p>
+<p><strong>9、代码编写规范</strong><br>有整体结构意识，把功能模块化，函数功能做到单一，类名、函数名、变量名起好，一看就知道是全局的、私有的，主要功能是做什么的，注释也不用太详细，关键点加上注释，知道一大段代码是干什么的就行。</p>
+<p><strong>10、英语</strong><br>这个自然不必说了，目前很多的技术文章，都是英文的，中文翻译过来，有时也有理解上的误差，大部分的技术，还是看官网好一点</p>
+<p><strong>11、身体</strong><br>每天都对着电脑，还是要注意身体锻炼，一个健康的身体，可以保证每天都很有活力。</p>
+
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -623,6 +535,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -635,7 +551,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/29/我的个人网站今天开通啦/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -706,6 +626,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -714,31 +637,21 @@
       
         
           
-          个人网站今天开通啦，欢迎大家常来逛逛，有好的东西一起分享。
+            <p>个人网站今天开通啦，欢迎大家常来逛逛，有好的东西一起分享。</p>
 
           
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/12/29/我的个人网站今天开通啦/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -752,6 +665,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -764,7 +681,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/12/29/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -835,6 +756,9 @@
       </header>
     
 
+    
+    
+    
     <div class="post-body" itemprop="articleBody">
 
       
@@ -843,30 +767,29 @@
       
         
           
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2015/12/29/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
         
       
     </div>
+    
+    
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
-    <div>
-      
-    </div>
+    
 
     <footer class="post-footer">
       
@@ -880,6 +803,10 @@
         <div class="post-eof"></div>
       
     </footer>
+  </div>
+  
+  
+  
   </article>
 
 
@@ -908,99 +835,82 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
     <div class="sidebar-inner">
 
       
 
       
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/20170630082742.jpg"
-               alt="wjun" />
-          <p class="site-author-name" itemprop="name">wjun</p>
-           
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20170630082742.jpg"
+                alt="wjun" />
+            
+              <p class="site-author-name" itemprop="name">wjun</p>
               <p class="site-description motion-element" itemprop="description"></p>
-          
-        </div>
-        <nav class="site-state motion-element">
-
-          
-            <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">posts</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-categories">
-              <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">categories</span>
-              </a>
-            </div>
-          
-
-          
-            
-            
-            <div class="site-state-item site-state-tags">
-              <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
-                <span class="site-state-item-name">tags</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
           </div>
-        
 
-        <div class="links-of-author motion-element">
-          
+          <nav class="site-state motion-element">
+
             
-              <span class="links-of-author-item">
-                <a href="https://github.com/wengjun" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
-              </span>
+              </div>
             
-              <span class="links-of-author-item">
-                <a href="http://www.weibo.com/1155817017/profile?topnav=1&wvr=6&is_all=1" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-globe"></i>
-                  
-                  微博
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
-              </span>
+              </div>
             
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
         </div>
-
-        
-        
-
-        
-        
-
-        
-
-
       </section>
 
       
@@ -1017,49 +927,35 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">wjun</span>
+
+  
 </div>
 
 
-<div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
-</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
-<div class="theme-info">
-  Theme -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
 
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
-    <span class="site-uv">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-      
-    </span>
-  
 
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
-    </span>
-  
-</div>
+
+
+
 
 
         
@@ -1071,6 +967,8 @@
         <i class="fa fa-arrow-up"></i>
         
       </div>
+    
+
     
 
   </div>
@@ -1105,53 +1003,54 @@
 
 
   
-  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-
   
-  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
   
-  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
-
-
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
-
-
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
 
   
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
 
   
 
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -1196,324 +1095,9 @@
 
 
 
+
+
   
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
 
 
 
@@ -1523,6 +1107,9 @@
 
   
 
+  
+
+  
   
 
   
